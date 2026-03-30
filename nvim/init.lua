@@ -2,20 +2,23 @@
 vim.pack.add({
   'https://github.com/akinsho/bufferline.nvim.git', -- buffer tabs
   'https://github.com/folke/noice.nvim.git', -- ui/notif niceties
-  'https://github.com/folke/snacks.nvim.git', -- bigfile/quickload/anims
+  -- bigfile/image/quickload/scope objects/smooth scroll (neo-tree uses image)
+  'https://github.com/folke/snacks.nvim.git',
   'https://github.com/folke/trouble.nvim.git', -- diagnostic window
   'https://github.com/ibhagwan/fzf-lua.git', -- fuzzy file finder
-  'https://github.com/lewis6991/gitsigns.nvim.git', -- git in statuscol
+  'https://github.com/lewis6991/gitsigns.nvim.git', -- git (for statuscol)
   'https://github.com/lukas-reineke/indent-blankline.nvim.git', -- scopes
   'https://github.com/luukvbaal/statuscol.nvim.git', -- nicer status column
-  'https://github.com/MunifTanjim/nui.nvim.git', -- library
+  -- library (for noice, neo-tree)
+  'https://github.com/MunifTanjim/nui.nvim.git',
   'https://github.com/neovim/nvim-lspconfig.git', -- language server setup
-  'https://github.com/nvim-lua/plenary.nvim.git', -- library
+  'https://github.com/nvim-lua/plenary.nvim.git', -- library (for neo-tree)
   'https://github.com/nvim-lualine/lualine.nvim.git', -- fancy status line
   'https://github.com/nvim-neo-tree/neo-tree.nvim.git', -- file tree
-  'https://github.com/nvim-tree/nvim-web-devicons.git', -- icon library
+  -- icon library (for bufferline, snacks, trouble, fzf-lua, lualine, neo-tree)
+  'https://github.com/nvim-tree/nvim-web-devicons.git',
   'https://github.com/nvim-treesitter/nvim-treesitter.git', -- syntax
-  'https://github.com/rcarriga/nvim-notify.git', -- library
+  'https://github.com/rcarriga/nvim-notify.git', -- library (for noice)
   -- theme
   { src = 'https://github.com/catppuccin/nvim.git', name = 'catppuccin' },
   -- syntax objects
