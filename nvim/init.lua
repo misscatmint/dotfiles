@@ -24,7 +24,7 @@ vim.pack.add({
     version = 'main'
   },
   -- autocompletion
-  { src = 'https://github.com/saghen/blink.cmp.git', version = 'v1.8.0' },
+  { src = 'https://github.com/saghen/blink.cmp.git', version = 'v1.10.1' },
 })
 
 -- theme
