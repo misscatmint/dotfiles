@@ -96,6 +96,8 @@ vim.lsp.enable('pyright') -- python (uv tool install -U pyright)
 
 -- diagnostics
 vim.diagnostic.config({
+  -- display highest severity sign
+  severity_sort = true,
   -- replace default ascii icons with fancy ones
   signs = {
     text = {'', '', '', '󰌵'},
