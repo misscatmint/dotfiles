@@ -95,7 +95,7 @@ require('trouble').setup()
 
 -- lsp
 vim.lsp.enable('clangd') -- c/c++
-vim.lsp.enable('pyright') -- python (uv tool install -U pyright)
+vim.lsp.enable('basedpyright') -- python (uv tool install -U basedpyright)
 
 -- diagnostics
 vim.diagnostic.config({
