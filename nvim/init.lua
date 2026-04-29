@@ -77,8 +77,8 @@ require('noice').setup({
 require('nvim-treesitter').install({
   'bash', 'c', 'caddy', 'cmake', 'cpp', 'css', 'csv', 'diff', 'dockerfile',
   'fish', 'git_config', 'git_rebase', 'gitattributes', 'gitcommit',
-  'gitignore', 'go', 'gpg', 'html', 'ini', 'javascript', 'json', 'lua',
-  'make', 'markdown', 'markdown_inline', 'nim', 'printf', 'python',
+  'gitignore', 'go', 'gpg', 'html', 'ini', 'javascript', 'json', 'latex',
+  'lua', 'make', 'markdown', 'markdown_inline', 'nim', 'printf', 'python',
   'query', 'regex', 'requirements', 'ruby', 'rust', 'toml', 'typescript',
   'vim', 'vimdoc', 'xml', 'zig'
 })
