@@ -74,14 +74,6 @@ require('noice').setup({
     --signature = { auto_open = { enabled = false } },
   },
 })
-require('nvim-treesitter').install({
-  'bash', 'c', 'caddy', 'cmake', 'cpp', 'css', 'csv', 'diff', 'dockerfile',
-  'fish', 'git_config', 'git_rebase', 'gitattributes', 'gitcommit',
-  'gitignore', 'go', 'gpg', 'html', 'ini', 'javascript', 'json', 'latex',
-  'lua', 'make', 'markdown', 'markdown_inline', 'nim', 'printf', 'python',
-  'query', 'regex', 'requirements', 'ruby', 'rust', 'toml', 'typescript',
-  'vim', 'vimdoc', 'xml', 'zig'
-})
 require('nvim-treesitter-textobjects').setup({ select = { lookahead = true } })
 require('snacks').setup({
   bigfile = { enabled = true }, -- limit plugins on large files
@@ -96,6 +88,22 @@ require('trouble').setup()
 -- lsp
 vim.lsp.enable('clangd') -- c/c++
 vim.lsp.enable('basedpyright') -- python (uv tool install -U basedpyright)
+
+-- treesitter
+treesitter = require('nvim-treesitter')
+treesitter.install({
+  'bash', 'c', 'caddy', 'cmake', 'comment', 'cpp', 'css', 'csv', 'diff',
+  'dockerfile', 'fish', 'git_config', 'git_rebase', 'gitattributes',
+  'gitcommit', 'gitignore', 'go', 'gpg', 'html', 'ini', 'javascript', 'json',
+  'latex', 'lua', 'make', 'markdown', 'markdown_inline', 'nim', 'printf',
+  'python', 'query', 'regex', 'requirements', 'ruby', 'rust', 'ssh_config',
+  'sql', 'toml', 'typescript', 'vim', 'vimdoc', 'xml', 'zig'
+})
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(args)
+    vim.bo[args.buf].indentexpr = 'v:lua.treesitter.indentexpr()'
+  end
+})
 
 -- diagnostics
 vim.diagnostic.config({
