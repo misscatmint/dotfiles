@@ -96,9 +96,10 @@ treesitter.install({
   'dockerfile', 'fish', 'git_config', 'git_rebase', 'gitattributes',
   'gitcommit', 'gitignore', 'go', 'gpg', 'html', 'ini', 'javascript', 'json',
   'latex', 'lua', 'luadoc', 'make', 'markdown', 'markdown_inline', 'nim',
-  'nim_format_string', 'passwd', 'pem', 'printf', 'python', 'query', 'regex',
-  'requirements', 'rst', 'ruby', 'rust', 'sourcepawn', 'ssh_config', 'sql',
-  'toml', 'typescript', 'vim', 'vimdoc', 'xml', 'yaml', 'zig'
+  'nim_format_string', 'passwd', 'pem', 'perl', 'printf', 'pymanifest',
+  'python', 'query', 'regex', 'requirements', 'robots_txt', 'rst', 'ruby',
+  'rust', 'sourcepawn', 'ssh_config', 'sql', 'toml', 'typescript', 'vim',
+  'vimdoc', 'xml', 'yaml', 'zig'
 })
 vim.api.nvim_create_autocmd('FileType', {
   callback = function(args)
