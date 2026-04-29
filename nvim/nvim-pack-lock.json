@@ -1,24 +1,24 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "451168851e8e2466bc97ee3e026c3dcb9141ce07",
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp.git",
-      "version": "'v1.10.1'"
+      "version": "'v1.10.2'"
     },
     "bufferline.nvim": {
       "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
       "src": "https://github.com/akinsho/bufferline.nvim.git"
     },
     "catppuccin": {
-      "rev": "a7788416689dbefea659d9e9415c87926b0ba5d8",
+      "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
       "src": "https://github.com/catppuccin/nvim.git"
     },
     "fzf-lua": {
-      "rev": "bde73a6886b607246095aa59f396de5e0d036890",
+      "rev": "b437bafc981a180d609bb4092c56ce8999f7a2c4",
       "src": "https://github.com/ibhagwan/fzf-lua.git"
     },
     "gitsigns.nvim": {
-      "rev": "50c205548d8b037b7ff6378fca6d21146f0b6161",
+      "rev": "6d808f99bd63303646794406e270bd553ad7792e",
       "src": "https://github.com/lewis6991/gitsigns.nvim.git"
     },
     "indent-blankline.nvim": {
@@ -26,11 +26,11 @@
       "src": "https://github.com/lukas-reineke/indent-blankline.nvim.git"
     },
     "lualine.nvim": {
-      "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
+      "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
       "src": "https://github.com/nvim-lualine/lualine.nvim.git"
     },
     "neo-tree.nvim": {
-      "rev": "84c75e7a7e443586f60508d12fc50f90d9aee14e",
+      "rev": "19d20a99bf0061a5ecc4343d2f09fa713306c965",
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim.git"
     },
     "noice.nvim": {
@@ -42,7 +42,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim.git"
     },
     "nvim-lspconfig": {
-      "rev": "16812abf0e8d8175155f26143a8504e8253e92b0",
+      "rev": "6419b36f50c42420cbbf1d3ffba573094cf414c8",
       "src": "https://github.com/neovim/nvim-lspconfig.git"
     },
     "nvim-notify": {
@@ -50,20 +50,20 @@
       "src": "https://github.com/rcarriga/nvim-notify.git"
     },
     "nvim-treesitter": {
-      "rev": "7caec274fd19c12b55902a5b795100d21531391f",
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter.git"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "93d60a475f0b08a8eceb99255863977d3a25f310",
+      "rev": "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git",
       "version": "'main'"
     },
     "nvim-web-devicons": {
-      "rev": "d7462543c9e366c0d196c7f67a945eaaf5d99414",
+      "rev": "4fc505ac7bd7692824a142e96e5f529c133862f8",
       "src": "https://github.com/nvim-tree/nvim-web-devicons.git"
     },
     "plenary.nvim": {
-      "rev": "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim.git"
     },
     "snacks.nvim": {
