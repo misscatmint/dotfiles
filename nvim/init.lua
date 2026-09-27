@@ -258,7 +258,7 @@ local function goto_next_start(group)
 end
 local function goto_next_end(group)
   return function()
-    require('nvim-treesitter-textobjects.select').goto_next_end(
+    require('nvim-treesitter-textobjects.move').goto_next_end(
       group, 'textobjects'
     )
   end
@@ -272,7 +272,7 @@ local function goto_previous_start(group)
 end
 local function goto_previous_end(group)
   return function()
-    require('nvim-treesitter-textobjects.select').goto_previous_end(
+    require('nvim-treesitter-textobjects.move').goto_previous_end(
       group, 'textobjects'
     )
   end
