@@ -40,7 +40,7 @@ require('blink.cmp').setup({
     documentation = { auto_show = true },
   },
 })
-bufferline = require('bufferline')
+local bufferline = require('bufferline')
 bufferline.setup({
   highlights = require('catppuccin.special.bufferline').get_theme(),
   options = { separator_style = 'slant', diagnostics = 'nvim_lsp' },
@@ -87,11 +87,17 @@ require('trouble').setup()
 
 -- lsp
 vim.lsp.enable('clangd') -- c/c++
+--vim.lsp.enable('gopls') -- go (go install golang.org/x/tools/gopls@latest)
+--vim.lsp.enable('nim_langserver') -- nim (nimble install -y nimlangserver)
+--vim.lsp.enable('basedpyright') -- python (uv tool install basedpyright)
 vim.lsp.enable('ruff') -- python (uv tool install ruff)
+--vim.lsp.enable('mypy') -- python (uv tool install mypy)
+--vim.lsp.enable('pyrefly') -- python (uv tool install pyrefly)
 vim.lsp.enable('ty') -- python (uv tool install ty)
+vim.lsp.enable('rust_analyzer') -- rust
 
 -- treesitter
-treesitter = require('nvim-treesitter')
+local treesitter = require('nvim-treesitter')
 treesitter.install({
   'bash', 'c', 'caddy', 'cmake', 'comment', 'cpp', 'css', 'csv', 'diff',
   'dockerfile', 'fish', 'git_config', 'git_rebase', 'gitattributes',
@@ -236,35 +242,35 @@ for n=1,9 do
 end
 
 -- nvim-treesitter-textobjects mappings
-function select_textobject(group)
+local function select_textobject(group)
   return function()
     require('nvim-treesitter-textobjects.select').select_textobject(
       group, 'textobjects'
     )
   end
 end
-function goto_next_start(group)
+local function goto_next_start(group)
   return function()
     require('nvim-treesitter-textobjects.move').goto_next_start(
       group, 'textobjects'
     )
   end
 end
-function goto_next_end(group)
+local function goto_next_end(group)
   return function()
     require('nvim-treesitter-textobjects.select').goto_next_end(
       group, 'textobjects'
     )
   end
 end
-function goto_previous_start(group)
+local function goto_previous_start(group)
   return function()
     require('nvim-treesitter-textobjects.move').goto_previous_start(
       group, 'textobjects'
     )
   end
 end
-function goto_previous_end(group)
+local function goto_previous_end(group)
   return function()
     require('nvim-treesitter-textobjects.select').goto_previous_end(
       group, 'textobjects'
