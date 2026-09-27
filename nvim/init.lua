@@ -98,20 +98,29 @@ vim.lsp.enable('rust_analyzer') -- rust
 
 -- treesitter
 local treesitter = require('nvim-treesitter')
-treesitter.install({
-  'bash', 'c', 'caddy', 'cmake', 'comment', 'cpp', 'css', 'csv', 'diff',
-  'dockerfile', 'fish', 'git_config', 'git_rebase', 'gitattributes',
-  'gitcommit', 'gitignore', 'go', 'gpg', 'html', 'ini', 'java', 'javascript',
-  'json', 'latex', 'lua', 'luadoc', 'make', 'markdown', 'markdown_inline',
-  'nim', 'nim_format_string', 'passwd', 'pem', 'perl', 'printf', 'pymanifest',
-  'python', 'query', 'regex', 'requirements', 'robots_txt', 'rst', 'ruby',
-  'rust', 'sourcepawn', 'ssh_config', 'sql', 'toml', 'tsx', 'typescript',
-  'vim', 'vimdoc', 'xml', 'yaml', 'zig'
-})
+local tslangs = {'bash', 'c', 'caddy', 'cmake', 'comment', 'cpp', 'css',
+                 'csv', 'diff', 'dockerfile', 'fish', 'git_config',
+                 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore',
+                 'go', 'gpg', 'html', 'ini', 'java', 'javascript', 'json',
+                 'latex', 'lua', 'luadoc', 'make', 'markdown',
+                 'markdown_inline', 'nim', 'nim_format_string', 'passwd',
+                 'pem', 'perl', 'printf', 'pymanifest', 'python', 'query',
+                 'regex', 'requirements', 'robots_txt', 'rst', 'ruby', 'rust',
+                 'sourcepawn', 'ssh_config', 'sql', 'toml', 'tsx',
+                 'typescript', 'vim', 'vimdoc', 'xml', 'yaml', 'zig'}
+treesitter.install(tslangs)
 vim.api.nvim_create_autocmd('FileType', {
   callback = function(args)
     vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end
+})
+local tsfts = {}
+for _, lang in ipairs(tslangs) do
+  vim.list_extend(tsfts, vim.treesitter.language.get_filetypes(lang))
+end
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = tsfts,
+  callback = function() vim.treesitter.start() end,
 })
 
 -- diagnostics
