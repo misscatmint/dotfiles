@@ -19,6 +19,7 @@ vim.pack.add({
   'https://github.com/nvim-tree/nvim-web-devicons.git',
   'https://github.com/nvim-treesitter/nvim-treesitter.git', -- syntax
   'https://github.com/rcarriga/nvim-notify.git', -- library (for noice)
+  'https://github.com/SparkyCloudy/sourcepawn-tools.nvim.git',
   -- theme
   { src = 'https://github.com/catppuccin/nvim.git', name = 'catppuccin' },
   -- syntax objects
@@ -83,6 +84,7 @@ require('snacks').setup({
   scroll = { enabled = true }, -- smooth scrolling for motions
 })
 require('statuscol').setup()
+require('sourcepawn-tools').setup()
 require('trouble').setup()
 
 -- lsp
