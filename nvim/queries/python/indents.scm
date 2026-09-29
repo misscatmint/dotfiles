@@ -1,16 +1,6 @@
-([
-  (binary_operator)
-  (lambda)
-  (concatenated_string)
-] @indent.begin
-  (#not-has-ancestor? @indent.begin
-    parenthesized_expression argument_list parameters list tuple set dictionary subscript
-    generator_expression list_comprehension set_comprehension dictionary_comprehension
-    tuple_pattern list_pattern dict_pattern class_pattern with_clause type_parameter
-    import_from_statement))
-
-((import_from_statement) @indent.begin
-  (#not-lua-match? @indent.begin "import%s*%("))
+; Backslash continuations are indented by after/indent/python.lua: while
+; typing, the "\" parses as a node outside the statement (and outside any
+; enclosing function), so no capture here can place the next line.
 
 ([(list) (list_comprehension) (list_pattern) (subscript) (type_parameter)] @indent.align
   (#set! indent.open_delimiter "[")
@@ -201,6 +191,29 @@
         ")" @indent.end))
     "return" @indent.end
   ] .)
+
+; As with return, code after raise can't run and code after pass is rare, so
+; the next line leaves the block.
+(raise_statement
+  [
+    (_) @indent.end
+    (_
+      [
+        (_)
+        ")"
+        "}"
+        "]"
+      ] @indent.end .)
+    (attribute
+      attribute: (_) @indent.end)
+    (call
+      arguments: (_
+        ")" @indent.end))
+    "raise" @indent.end
+  ] .)
+
+(pass_statement
+  "pass" @indent.end)
 
 [
   ")"

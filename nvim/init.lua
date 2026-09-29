@@ -113,6 +113,7 @@ local tslangs = {'bash', 'c', 'caddy', 'cmake', 'comment', 'cpp', 'css',
 treesitter.install(tslangs)
 vim.api.nvim_create_autocmd('FileType', {
   callback = function(args)
+    if args.match == 'python' then return end -- set by after/indent/python.lua
     vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end
 })
