@@ -20,7 +20,6 @@ vim.pack.add({
   'https://github.com/nvim-tree/nvim-web-devicons.git',
   'https://github.com/nvim-treesitter/nvim-treesitter.git', -- syntax
   'https://github.com/rcarriga/nvim-notify.git', -- library (for noice)
-  'https://github.com/SparkyCloudy/sourcepawn-tools.nvim.git',
   -- theme
   { src = 'https://github.com/catppuccin/nvim.git', name = 'catppuccin' },
   -- syntax objects
@@ -139,7 +138,6 @@ require('snacks').setup({
   scroll = { enabled = true }, -- smooth scrolling for motions
 })
 require('statuscol').setup()
-require('sourcepawn-tools').setup()
 require('trouble').setup()
 require('virt-column').setup({
   char = '│',
@@ -157,6 +155,26 @@ vim.lsp.enable('ruff') -- python (uv tool install ruff)
 --vim.lsp.enable('pyrefly') -- python (uv tool install pyrefly)
 vim.lsp.enable('ty') -- python (uv tool install ty)
 vim.lsp.enable('rust_analyzer') -- rust
+-- sourcemod
+vim.filetype.add({
+  extension = { sp = 'sourcepawn' },
+  pattern = { ['.*/include/.*%.inc'] = 'sourcepawn' },
+})
+local sm = vim.env.SOURCEMOD
+if sm then
+  vim.lsp.config('sourcepawn_studio', {
+    cmd = { 'sourcepawn-studio' },
+    filetypes = { 'sourcepawn' },
+    root_markers = { '.git' },
+    settings = {
+      SourcePawnLanguageServer = {
+        compiler = { path = sm .. '/addons/sourcemod/scripting/spcomp64' },
+        includeDirectories = { sm .. '/addons/sourcemod/scripting/include' },
+      },
+    },
+  })
+  vim.lsp.enable('sourcepawn_studio')
+end
 
 -- treesitter
 local treesitter = require('nvim-treesitter')
