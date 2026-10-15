@@ -8,7 +8,8 @@ vim.pack.add({
   'https://github.com/ibhagwan/fzf-lua.git', -- fuzzy file finder
   'https://github.com/lewis6991/gitsigns.nvim.git', -- git (for statuscol)
   'https://github.com/lukas-reineke/indent-blankline.nvim.git', -- scopes
-  'https://github.com/luukvbaal/statuscol.nvim.git', -- nicer status column
+  'https://github.com/lukas-reineke/virt-column.nvim.git', -- nice colorcolumn
+  'https://github.com/luukvbaal/statuscol.nvim.git', -- nice status column
   -- library (for noice, neo-tree)
   'https://github.com/MunifTanjim/nui.nvim.git',
   'https://github.com/neovim/nvim-lspconfig.git', -- language server setup
@@ -86,6 +87,11 @@ require('snacks').setup({
 require('statuscol').setup()
 require('sourcepawn-tools').setup()
 require('trouble').setup()
+require('virt-column').setup({
+  char = '│',
+  highlight = 'IblIndent',
+  virtcolumn = '+1',
+})
 
 -- lsp
 vim.lsp.enable('clangd') -- c/c++
