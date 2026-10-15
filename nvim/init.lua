@@ -160,21 +160,7 @@ vim.filetype.add({
   extension = { sp = 'sourcepawn' },
   pattern = { ['.*/include/.*%.inc'] = 'sourcepawn' },
 })
-local sm = vim.env.SMDIR
-if sm then
-  vim.lsp.config('sourcepawn_studio', {
-    cmd = { 'sourcepawn-studio' },
-    filetypes = { 'sourcepawn' },
-    root_markers = { '.git' },
-    settings = {
-      SourcePawnLanguageServer = {
-        compiler = { path = sm .. '/addons/sourcemod/scripting/spcomp64' },
-        includeDirectories = { sm .. '/addons/sourcemod/scripting/include' },
-      },
-    },
-  })
-  vim.lsp.enable('sourcepawn_studio')
-end
+if vim.env.SMDIR then vim.lsp.enable('sourcepawn_studio') end
 
 -- treesitter
 local treesitter = require('nvim-treesitter')
