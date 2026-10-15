@@ -44,8 +44,16 @@ vim.api.nvim_create_user_command('PackOrphans', function()
       table.insert(names, p.spec.name)
     end
   end
-  print(#names > 0 and table.concat(names, '\n') or 'No orphaned plugins')
-end, { desc = 'List orphaned plugins (not in init.lua)' })
+  if #names == 0 then
+    print('No orphaned plugins')
+  elseif vim.fn.confirm(
+      'Delete orphaned plugins?\n\n' .. table.concat(names, '\n') .. '\n',
+      '&Yes\n&No',
+      2
+    ) == 1 then
+    vim.pack.del(names)
+  end
+end, { desc = 'List/uninstall orphaned plugins' })
 
 -- theme
 require('catppuccin').setup({ auto_integrations = true })
