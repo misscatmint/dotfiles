@@ -90,6 +90,26 @@ require('noice').setup({
 require('nvim-treesitter-textobjects').setup({ select = { lookahead = true } })
 require('snacks').setup({
   bigfile = { enabled = true }, -- limit plugins on large files
+  dashboard = {
+    sections = {
+      { section = 'header' },
+      { section = 'keys', gap = 1, padding = 2 },
+      {
+        icon = ' ',
+        title = 'Recent Files',
+        section = 'recent_files',
+        indent = 2,
+        padding = 2,
+      },
+      {
+        icon = ' ',
+        title = 'Projects',
+        section = 'projects',
+        indent = 2,
+        padding = 2,
+      },
+    },
+  },
   image = { enabled = true }, -- display images
   quickfile = { enabled = true }, -- speed up startup time
   scope = { enabled = true }, -- treesitter-based scope objects
