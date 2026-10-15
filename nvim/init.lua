@@ -149,6 +149,7 @@ vim.o.foldcolumn = '0' -- disable gutter column for folds
 vim.o.foldlevelstart = 99 -- expand all folds by default
 vim.o.mouse = 'a' -- enable mouse support
 vim.o.number = true -- show line numbers
+vim.o.numberwidth = 3
 vim.o.scrolloff = 4 -- lines of context to show when scrolling
 vim.o.sidescrolloff = 8 -- same but horizontally
 vim.o.signcolumn = 'yes' -- always show diagnostic gutter
