@@ -19,4 +19,5 @@ if status is-interactive
 
     command -q starship && starship init fish | source
     command -q zoxide && zoxide init fish | source
+    command -q fzf && fzf --fish | source
 end
