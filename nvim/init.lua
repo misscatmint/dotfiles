@@ -160,7 +160,7 @@ vim.filetype.add({
   extension = { sp = 'sourcepawn' },
   pattern = { ['.*/include/.*%.inc'] = 'sourcepawn' },
 })
-local sm = vim.env.SOURCEMOD
+local sm = vim.env.SMDIR
 if sm then
   vim.lsp.config('sourcepawn_studio', {
     cmd = { 'sourcepawn-studio' },
