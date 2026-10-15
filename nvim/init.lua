@@ -31,6 +31,21 @@ vim.pack.add({
   -- autocompletion
   { src = 'https://github.com/saghen/blink.cmp.git', version = 'v1.10.2' },
 })
+vim.api.nvim_create_user_command('PackSync', function()
+  vim.pack.update(nil, { target = 'lockfile', force = true })
+end, { desc = 'Sync installed plugins with nvim-pack-lock.json' })
+vim.api.nvim_create_user_command('PackUpdate', function()
+  vim.pack.update()
+end, { desc = 'Update plugins' })
+vim.api.nvim_create_user_command('PackOrphans', function()
+  local names = {}
+  for _, p in ipairs(vim.pack.get(nil, { info = false })) do
+    if not p.active then
+      table.insert(names, p.spec.name)
+    end
+  end
+  print(#names > 0 and table.concat(names, '\n') or 'No orphaned plugins')
+end, { desc = 'List orphaned plugins (not in init.lua)' })
 
 -- theme
 require('catppuccin').setup({ auto_integrations = true })
