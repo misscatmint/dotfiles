@@ -45,7 +45,18 @@ require('blink.cmp').setup({
 local bufferline = require('bufferline')
 bufferline.setup({
   highlights = require('catppuccin.special.bufferline').get_theme(),
-  options = { separator_style = 'slant', diagnostics = 'nvim_lsp' },
+  options = {
+    diagnostics = 'nvim_lsp',
+    offsets = {
+      {
+        filetype = 'neo-tree',
+        text = 'neo-tree',
+        highlight = 'Directory',
+        text_align = 'left',
+      },
+    },
+    separator_style = 'slant',
+  },
 })
 require('fzf-lua').setup()
 require('gitsigns').setup()
