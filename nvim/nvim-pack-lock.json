@@ -70,6 +70,10 @@
       "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
       "src": "https://github.com/folke/snacks.nvim.git"
     },
+    "sourcepawn.nvim": {
+      "rev": "1a22571e65d6cad9b5bda45e7bdaa172884de677",
+      "src": "https://github.com/misscatmint/sourcepawn.nvim"
+    },
     "statuscol.nvim": {
       "rev": "887b8a03ea3804628505c9002fd07bd06a3db2e0",
       "src": "https://github.com/luukvbaal/statuscol.nvim.git"

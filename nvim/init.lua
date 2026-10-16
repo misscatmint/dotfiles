@@ -10,6 +10,7 @@ vim.pack.add({
   'https://github.com/lukas-reineke/indent-blankline.nvim.git', -- scopes
   'https://github.com/lukas-reineke/virt-column.nvim.git', -- nice colorcolumn
   'https://github.com/luukvbaal/statuscol.nvim.git', -- nice status column
+  'https://github.com/misscatmint/sourcepawn.nvim',
   -- library (for noice, neo-tree)
   'https://github.com/MunifTanjim/nui.nvim.git',
   'https://github.com/neovim/nvim-lspconfig.git', -- language server setup
@@ -155,12 +156,6 @@ vim.lsp.enable('ruff') -- python (uv tool install ruff)
 --vim.lsp.enable('pyrefly') -- python (uv tool install pyrefly)
 vim.lsp.enable('ty') -- python (uv tool install ty)
 vim.lsp.enable('rust_analyzer') -- rust
--- sourcemod
-vim.filetype.add({
-  extension = { sp = 'sourcepawn' },
-  pattern = { ['.*/include/.*%.inc'] = 'sourcepawn' },
-})
-if vim.env.SMDIR then vim.lsp.enable('sourcepawn_studio') end
 
 -- treesitter
 local treesitter = require('nvim-treesitter')
