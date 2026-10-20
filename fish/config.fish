@@ -10,8 +10,8 @@ if status is-interactive
 
     if command -q nvim
         abbr -g --add nv nvim
-        set -x EDITOR nvim
-        set -x VISUAL nvim
+        set -x EDITOR (command -s nvim)
+        set -x VISUAL $EDITOR
     else
         set -x EDITOR vim
         set -x VISUAL vim
