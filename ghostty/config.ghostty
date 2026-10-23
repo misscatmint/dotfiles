@@ -1,0 +1,5 @@
+macos-titlebar-style = hidden
+shell-integration-features = ssh-env,ssh-terminfo,sudo
+window-height = 44
+window-width = 130
+window-padding-color = extend
