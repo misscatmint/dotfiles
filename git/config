@@ -5,14 +5,20 @@
 	st = status
 	in = log ..@{upstream}
 	out = log @{upstream}..
+[commit]
+	gpgsign = true
 [core]
 	pager = delta
 [delta]
 	navigate = true
 [diff]
 	renames = copies
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
 [include]
-	path = user
+	path = local
 [init]
 	defaultBranch = main
 [interactive]
@@ -21,3 +27,5 @@
 	conflictstyle = zdiff3
 [rerere]
 	enabled = true
+[tag]
+	gpgsign = true
