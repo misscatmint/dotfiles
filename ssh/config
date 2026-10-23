@@ -1,0 +1,13 @@
+Include ~/.ssh/config.local
+
+AddKeysToAgent yes
+IdentitiesOnly yes
+IgnoreUnknown UseKeychain
+UseKeychain yes
+VerifyHostKeyDNS yes
+
+Host github.com
+    Hostname ssh.github.com
+    IdentityFile ~/.ssh/id_ed25519_%L_github
+    Port 443
+    User git
