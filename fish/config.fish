@@ -1,6 +1,5 @@
 test -x /opt/homebrew/bin/brew && eval (/opt/homebrew/bin/brew shellenv)
 fish_add_path -g ~/.cargo/bin
-fish_add_path -g ~/.config/git/bin
 fish_add_path -g ~/.local/bin
 
 set -x ALTERNATE_EDITOR nano

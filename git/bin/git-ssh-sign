@@ -8,12 +8,14 @@ if [ $# -eq 0 ]; then
 fi
 
 key=
+op=
 prev=
 for arg; do
     [ "$prev" = -f ] && key=$arg
+    [ "$prev" = -Y ] && op=$arg
     prev=$arg
 done
-if [ -n "$key" ] && ! ssh-add -T "$key" >/dev/null 2>&1; then
+if [ "$op" = sign ] && [ -n "$key" ] && ! ssh-add -T "$key" >/dev/null 2>&1; then
     ssh-add "${key%.pub}" || true
 fi
 
