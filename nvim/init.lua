@@ -198,6 +198,7 @@ vim.diagnostic.config({
 -- general
 vim.o.autowrite = true -- auto-save in certain situations
 vim.o.cursorline = true -- highlight line cursor is on
+vim.o.fixeol = false
 vim.o.foldcolumn = '0' -- disable gutter column for folds
 vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.o.foldlevelstart = 99 -- expand all folds by default
