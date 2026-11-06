@@ -12,7 +12,9 @@
 [delta]
 	navigate = true
 [diff]
+	algorithm = histogram
 	renames = copies
+	tool = nvimdiff
 [gpg]
 	format = ssh
 [gpg "ssh"]
@@ -24,6 +26,8 @@
 	defaultBranch = main
 [interactive]
 	diffFilter = delta --color-only
+[log]
+	showSignature = true
 [merge]
 	conflictstyle = zdiff3
 [rerere]
