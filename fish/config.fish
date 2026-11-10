@@ -3,6 +3,7 @@ fish_add_path -g ~/.cargo/bin
 fish_add_path -g ~/.local/bin
 
 set -x ALTERNATE_EDITOR nano
+set -x LESS -FR
 test (uname) = Darwin && set -x BROWSER open
 if command -q nvim
     abbr -g --add nv nvim
