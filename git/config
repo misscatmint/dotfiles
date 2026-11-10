@@ -32,5 +32,3 @@
 	conflictstyle = zdiff3
 [rerere]
 	enabled = true
-[tag]
-	gpgsign = true
